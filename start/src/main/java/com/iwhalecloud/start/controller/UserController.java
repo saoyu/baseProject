@@ -4,8 +4,8 @@ import com.iwhalecloud.client.api.UserService;
 import com.iwhalecloud.client.model.dto.UserDTO;
 import com.iwhalecloud.client.model.param.UserParam;
 import com.iwhalecloud.client.model.query.UserQuery;
-import com.iwhalecloud.server.common.model.ResponseMsg;
-import com.iwhalecloud.server.common.utils.CommonFunctions;
+import com.ztesoft.zsmart.nros.base.model.ResponseMsg;
+import com.ztesoft.zsmart.nros.base.util.CommonFunctions;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,10 +73,16 @@ public class UserController {
         return userService.listUser(userQuery);
     }
 
+//    @PostMapping("/insert-user")
+//    @ApiOperation("新增用户")
+//    public int insertUser(@RequestBody UserParam userParam) {
+//        return userService.insertUser(userParam);
+//    }
+
     @PostMapping("/insert-user")
     @ApiOperation("新增用户")
-    public int insertUser(@RequestBody UserParam userParam) {
-        return userService.insertUser(userParam);
+    public ResponseMsg insertUser(@RequestBody UserParam userParam) {
+        return CommonFunctions.runSupplier(() -> userService.insertUser(userParam), "新增失败");
     }
 
     @DeleteMapping("/delete-user")

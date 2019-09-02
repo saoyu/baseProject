@@ -2,6 +2,7 @@ package com.iwhalecloud.server.common.convertor;
 
 import com.iwhalecloud.client.model.dto.UserDTO;
 import com.iwhalecloud.client.model.param.UserParam;
+import com.iwhalecloud.client.model.query.UserQuery;
 import com.iwhalecloud.server.dao.dataobject.generator.UserDO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -25,5 +26,7 @@ public interface UserConvertor {
     UserDO paramToDO(UserParam userParam);
 
     List<UserDTO> doListToDTOList(List<UserDO> list);
+
+    UserQuery paramToQuery(UserParam userParam);
 
 }

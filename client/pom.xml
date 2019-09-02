@@ -19,9 +19,19 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>com.ztesoft.zsmart.nros</groupId>
+			<artifactId>nros-base</artifactId>
+			<version>1.0-RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ztesoft.zsmart.nros</groupId>
+			<artifactId>nros-common</artifactId>
+            <version>1.0-RELEASE</version>
+        </dependency>
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-            <version>1.16.20</version>
+			<version>1.18.8</version>
 		</dependency>
 
 	</dependencies>

@@ -1,6 +1,7 @@
 package com.iwhalecloud.server.common.enums;
 
 /**
+ * 性别枚举类
  * @author leeshaoyu
  * @description
  * @date 2019/8/27
