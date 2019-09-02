@@ -29,8 +29,8 @@ public class UserDomain {
         return userRepository.selectByUsername(username);
     }
 
-    public UserDTO selectBynickname(String nickname) {
-        return userRepository.selectBynickname(nickname);
+    public UserDTO selectByNickname(String nickname) {
+        return userRepository.selectByNickname(nickname);
     }
 
     public List<UserDTO> listUser(UserQuery userQuery) {

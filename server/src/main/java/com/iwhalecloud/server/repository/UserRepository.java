@@ -34,7 +34,7 @@ public class UserRepository {
         return UserConvertor.INSTANCE.doToDTO(userMapper.selectByUsername(username));
     }
 
-    public UserDTO selectBynickname(String nickname) {
+    public UserDTO selectByNickname(String nickname) {
         return UserConvertor.INSTANCE.doToDTO(userMapper.selectByNickname(nickname));
     }
 
@@ -57,6 +57,6 @@ public class UserRepository {
     }
 
     public List<UserDTO> listAll() {
-        return UserConvertor.INSTANCE.doListToDTOList(userMapper.listAll());
+        return UserConvertor.INSTANCE.doListToDTOList(userMapper.listAll("1"));
     }
 }

@@ -1,5 +1,7 @@
 package com.iwhalecloud.client.model.query;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -8,6 +10,7 @@ import java.util.Date;
  * @description
  * @date 2019/8/26
  */
+@Data
 public class UserQuery implements Serializable {
 
     /**

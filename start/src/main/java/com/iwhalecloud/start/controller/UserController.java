@@ -21,53 +21,55 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- *  用户controller
+ * 用户controller
+ *
  * @author leeshoayu
- * @date 2019/8/22
  * @version 1.0
+ * @date 2019/8/22
  */
 @RestController
 @RequestMapping("/user")
-@Api(value = "用户", tags = "用户接口")
+@Api(value = "用户", tags = "UserController")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping("/user")
+    @PostMapping("/test")
     @ApiOperation("测试")
-    public String user(){
-        return "sds";
+    public String user() {
+        return "success";
     }
 
     @GetMapping("/select-by-id")
     @ApiOperation("通过id查询用户详情")
-    public ResponseMsg<UserDTO> selectUserById(@RequestParam Long id){
-        return CommonFunctions.runSupplier(()->userService.selectUserById(id), "查询失败");
+    public ResponseMsg<UserDTO> selectUserById(@RequestParam Long id) {
+        return CommonFunctions.runSupplier(() -> userService.selectUserById(id), "查询失败");
     }
 
+    // TODO 只显示一条数据
     @GetMapping("/list-all")
-    @ApiOperation("通过用户名查询用户详情")
-    public List<UserDTO> listAll(){
+    @ApiOperation("查询所有用户")
+    public List<UserDTO> listAll() {
         return userService.listAll();
     }
 
-
     @GetMapping("/select-by-username")
     @ApiOperation("通过用户名查询用户详情")
-    public UserDTO selectByUsername(@RequestParam String username){
+    public UserDTO selectByUsername(@RequestParam String username) {
         return userService.selectByUsername(username);
     }
 
     @GetMapping("/select-by-nickname")
     @ApiOperation("通过昵称查询用户详情")
-    public UserDTO selectBynickname(@RequestParam String nickname){
-        return userService.selectBynickname(nickname);
+    public UserDTO selectByNickname(@RequestParam String nickname) {
+        return userService.selectByNickname(nickname);
     }
 
+    // TODO 这里有点问题
     @PostMapping("/list-user")
     @ApiOperation("查询用户列表")
-    public List<UserDTO> listUser(@RequestBody UserQuery userQuery){
+    public List<UserDTO> listUser(@RequestBody UserQuery userQuery) {
         return userService.listUser(userQuery);
     }
 
@@ -77,14 +79,8 @@ public class UserController {
         return userService.insertUser(userParam);
     }
 
-/*    @PostMapping("/batch-insert-user")
-    @ApiOperation("批量新增用户")
-    public ResponseMsg InsertUser(@RequestBody UserParam userParam) {
-        return userService.InsertUser(userParam);
-    }*/
-
     @DeleteMapping("/delete-user")
-    @ApiOperation("新增用户")
+    @ApiOperation("删除用户")
     public int deleteUser(@RequestParam Long id) {
         return userService.deleteUser(id);
     }
@@ -95,4 +91,9 @@ public class UserController {
         return userService.updateUser(userParam);
     }
 
+    @PutMapping("/update-user-password")
+    @ApiOperation("更新用户密码")
+    public int updatePassword(@RequestBody UserParam userParam) {
+        return userService.updatePassword(userParam);
+    }
 }
