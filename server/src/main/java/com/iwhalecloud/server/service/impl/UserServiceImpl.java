@@ -116,4 +116,15 @@ public class UserServiceImpl implements UserService {
     public int updatePassword(UserParam userParam) {
         return userDomain.updateUser(userParam);
     }
+
+    /**
+     * 查询用户详情
+     * @param userQuery
+     * @return
+     */
+    @Override
+    public UserDTO detailUser(UserQuery userQuery) {
+       UserDTO userDTO = userDomain.detailUser(userQuery);
+       return userDTO;
+    }
 }

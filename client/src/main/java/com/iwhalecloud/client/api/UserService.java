@@ -75,4 +75,6 @@ public interface UserService {
      * @return
      */
     int updatePassword(UserParam userParam);
+
+    UserDTO detailUser(UserQuery userQuery);
 }

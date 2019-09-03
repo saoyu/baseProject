@@ -96,4 +96,20 @@ public class UserParam {
      * 状态
      */
     private String status;
+
+    /**
+     * 角色id
+     */
+    private Long roleId;
+
+    /**
+     * 创建时间
+     */
+    private Date gmtCreate;
+
+    /**
+     * 修改时间
+     */
+    private Date gmtModified;
+
 }

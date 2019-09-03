@@ -94,6 +94,21 @@ public class UserDO implements Serializable {
     private Date registeDateTime;
 
     /**
+     * 角色id
+     */
+    private Long roleId;
+
+    /**
+     * 创建时间
+     */
+    private Date gmtCreate;
+
+    /**
+     * 修改时间
+     */
+    private Date gmtModified;
+
+    /**
      * 状态
      */
     private String status;

@@ -19,6 +19,9 @@
     <result column="id_card_number" property="idCardNumber" jdbcType="VARCHAR" />
     <result column="registe_date_time" property="registeDateTime" jdbcType="TIMESTAMP" />
     <result column="status" property="status" jdbcType="CHAR" />
+    <result column="role_id" property="roleId" jdbcType="VARCHAR" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, username, password, nickname, icon, gender, birthday, province, city, county, 

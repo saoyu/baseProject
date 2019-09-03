@@ -61,4 +61,14 @@ public class UserDomain {
     public List<UserDTO> listAll() {
         return userRepository.listAll();
     }
+
+    /**
+     * 查询用户详情
+     * @param userQuery
+     * @return
+     */
+    public UserDTO detailUser(UserQuery userQuery) {
+        UserDTO userDTO = userRepository.selectById(userQuery.getId());
+        return userDTO;
+    }
 }

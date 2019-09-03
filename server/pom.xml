@@ -46,14 +46,6 @@
             <version>1</version>
         </dependency>
         <!--mapStruct依赖 end-->
-
-
-        <!--        lombok-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
         <!--        Apache-->
         <dependency>
             <groupId>org.apache.commons</groupId>

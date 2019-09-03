@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
+ * 用户DTO
  * @author leeshaoyu
  * @description
  * @date 2019/8/22
@@ -97,4 +98,20 @@ public class UserDTO implements Serializable {
      * 状态
      */
     private String status;
+
+    /**
+     * 角色id
+     */
+    private Long roleId;
+
+    /**
+     * 创建时间
+     */
+    private Date gmtCreate;
+
+    /**
+     * 修改时间
+     */
+    private Date gmtModified;
+
 }

@@ -41,7 +41,14 @@ public class UserController {
         return "success";
     }
 
-    @GetMapping("/select-by-id")
+
+    @PostMapping("/detail-user")
+    @ApiOperation("查询用户详情")
+    public ResponseMsg<UserDTO> detailUser(@RequestBody UserQuery userQuery){
+        return CommonFunctions.runSupplier(() -> userService.detailUser(userQuery), "查询失败");
+    }
+
+    @GetMapping("/detail-user")
     @ApiOperation("通过id查询用户详情")
     public ResponseMsg<UserDTO> selectUserById(@RequestParam Long id) {
         return CommonFunctions.runSupplier(() -> userService.selectUserById(id), "查询失败");
