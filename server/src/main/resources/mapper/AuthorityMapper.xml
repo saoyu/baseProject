@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.iwhalecloud.server.dao.mapper.AuthorityMapper" >
+  <resultMap id="BaseResultMap" type="com.iwhalecloud.server.dao.dataobject.generator.AuthorityDO" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="role_id" property="roleId" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, role_id, name, gmt_create, gmt_modified, status
+  </sql>
+  <select id="listByRoleId" resultType="com.iwhalecloud.server.dao.dataobject.generator.AuthorityDO">
+    select
+    <include refid="Base_Column_List"/>
+    from dm_authority
+    where role_id = #{role_id,jdbcType=BIGINT}
+  </select>
+
+</mapper>
